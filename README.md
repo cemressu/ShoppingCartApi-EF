@@ -1,6 +1,6 @@
-# Shopping Cart API
+# Shopping Cart API V2
 
-## Shopping Cart API
+## Shopping Cart API V2
 
 This program is designed to manage product, customer, basket, and order information. Through the program, you can add, delete, update, or access previous records using their IDs at any time.
 
