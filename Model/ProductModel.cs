@@ -1,17 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace PostrgreSqlApi.Model
+namespace ShoppingCartApi.Model
 {
-    [Table(name:"product")]
-    public class ProductModel
+    [Table(name: "product")]
+    public class ProductModel : BaseEntity
     {
-        [Key]
-        [Required]
-        [Column(name: "id")]
-        public required int ID { get; set; }
-
-
         [Required]
         [Column(name: "name")]
         public required string Name { get; set; }
@@ -33,5 +27,4 @@ namespace PostrgreSqlApi.Model
         public required string Brand { get; set; }
 
     }
-
 }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PostrgreSqlApi.Model;
-
+using ShoppingCartApi.Model;
+using ShoppingCartApi.Service.BasketService;
+using ShoppingCartApi.Service.ProductService;
 
 namespace ShoppingCartApi.Controllers
 {
@@ -8,84 +10,69 @@ namespace ShoppingCartApi.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly DbContext _dbContext;
+        private readonly IProductService _productService;
 
-        public ProductController(DbContext dbContext)
+        public ProductController(IProductService productService)
         {
-            _dbContext = dbContext;
+            _productService = productService;
         }
-        //dependency injection uygulaması
 
 
 
-       
         [HttpGet("GetAllProducts")]
-        public IActionResult GetAllProducts()
+        public async Task<IEnumerable<ProductModel>> GetAllProducts()
         {
-            var products = _dbContext.GetAllProducts();
+            IEnumerable<ProductModel> products = await _productService.GetAllProducts();
 
-            return Ok(products);
+            return products;
         }
-        //tüm ürün kayıtlarını alır ve listeler
 
 
-
-        
         [HttpGet("{id}/GetProductById")]
-        public IActionResult GetProductById(int id)
+        public async Task<ActionResult<ProductModel>> GetProductById(int id)
         {
-            var product = _dbContext.GetProductById(id);
-
-            if (product==null)
+            var product = await _productService.GetProductById(id);
+            if (product == null)
             {
-                return NotFound("Product not found.");
+                return NotFound($"Product ID = {id} not found");
             }
             return Ok(product);
         }
-        //belirtilen id'ye sahip ürünün bilgilerini verir
 
 
-
-       
         [HttpPost("AddProduct")]
-        public IActionResult AddProduct([FromBody] ProductModel product)
+        public async Task<ActionResult<ProductModel>> AddProduct([FromBody] ProductModel productModel)
         {
-            _dbContext.AddProduct(product);
-
-            return Ok("Product added successfully.");
+            await _productService.AddProduct(productModel);
+            return Ok("Product added successfully");
         }
-        //yeni ürün ekler
-        
 
 
-       
+
         [HttpPut("{id}/UpdateProduct")]
-        public IActionResult UpdateProduct(int id, [FromBody] ProductModel product)
+        public async Task<ActionResult<string>> UpdateProduct(int id, [FromBody] ProductModel productModel)
         {
-            var updated = _dbContext.UpdateProduct(id, product);
-
-            if (updated == null || updated == "0")
+            var result = await _productService.UpdateProduct(id, productModel);
+            if (result == "Product not found")
             {
-                return NotFound("Product not found.");
+                return NotFound($"Product ID = {id} not found");
             }
-            return Ok("Product updated succesfully.");
+            return Ok("Product updated successfully");
         }
-        //belirtilen id deki ürünü günceller
 
 
 
-       
         [HttpDelete("{id}/DeleteProduct")]
-        public IActionResult DeleteProduct(int id)
+        public async Task<ActionResult<string>> DeleteProduct(int id)
         {
-            var deleted = _dbContext.DeleteProduct(id);
-
-            if (deleted == null || deleted == "0")
+            var result = await _productService.DeleteProduct(id);
+            if (result == null)
             {
-                return NotFound("Product not found.");
+                return NotFound($"Product ID = {id} not found");
             }
-            return Ok("Product deleted successfully.");
+            return Ok("Product deleted successfully");
         }
-        //belirtilen id deki ürünü siler
+
+
     }
 }

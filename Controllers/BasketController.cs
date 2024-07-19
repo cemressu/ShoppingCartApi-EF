@@ -1,91 +1,85 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PostrgreSqlApi.Model;
+using ShoppingCartApi.Repositories.Abstract;
+using ShoppingCartApi.Service.BasketService;
+
 
 namespace ShoppingCartApi.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class BasketController : ControllerBase
     {
-        private readonly DbContext _dbContext;
+        private readonly IBasketService _basketService;
 
-        public BasketController(DbContext dbContext)
+        public BasketController(IBasketService basketService)
         {
-            _dbContext = dbContext;
+            _basketService = basketService;
         }
-        // DEPENDENCY INJECTION kullandık
 
 
 
-       
         [HttpGet("GetAllBaskets")]
-        public IActionResult GetAllBaskets()
+        public async Task<IEnumerable<BasketModel>> GetAllBaskets()
         {
-            var baskets = _dbContext.GetAllBaskets();
+            IEnumerable<BasketModel> baskets = await _basketService.GetAllBaskets();
 
-            return Ok(baskets);
-            //tüm sepetleri almak için
+            return baskets;
         }
 
-
+        
 
        
         [HttpGet("{id}/GetBasketById")]
-        public IActionResult GetBasketById(int id)
+        public async Task<ActionResult<BasketModel>> GetBasketById(int id)
         {
-            var basket = _dbContext.GetBasketById(id);
-
-            if (basket==null)
+            var basket = await _basketService.GetBasketById(id);
+            if (basket == null)
             {
-                return NotFound("Basket not found.");
+                return NotFound($"Basket ID = {id} not found");
             }
             return Ok(basket);
         }
-        //belirtilen id'ye sahip sepetin bilgilerini verir
 
 
 
-       
+
         [HttpPost("AddBasket")]
-        public IActionResult AddBasket([FromBody] BasketModel basket)
+        public async Task<ActionResult<BasketModel>> AddBasket([FromBody] BasketModel basketModel)
         {
-            _dbContext.AddBasket(basket);
-
-            return Ok("Basket added successfully."); //sepeti ekler ve ekranda bunu döndürür
-                                           //yeni sepet eklemek için
+            await _basketService.AddBasket(basketModel);
+            return Ok("Basket added successfully");
         }
 
 
 
-        
+
         [HttpPut("{id}/UpdateBasket")]
-        public IActionResult UpdateBasket(int id, [FromBody] BasketModel basket)
+        public async Task<ActionResult<string>> UpdateBasket(int id, [FromBody] BasketModel basketModel)
         {
-            var updated = _dbContext.UpdateBasket(id, basket);
-
-            if (updated == null || updated == "0")
+            var result = await _basketService.UpdateBasket(id, basketModel);
+            if (result == "Basket not found")
             {
-                return NotFound("Basket not found."); //güncelleme basarisiz olursa bunu
+                return NotFound($"Basket ID = {id} not found");
             }
-            return Ok("Basket updated succesfully."); //basarili olursa bunu döndürür
-                                         //istenilen id deki bir sepeti güncellemek için
+            return Ok("Basket updated successfully");
         }
 
 
 
-
+        //delete metoduna o id db de yoksa not found döndür lazım
         [HttpDelete("{id}/DeleteBasket")]
-        public IActionResult DeleteBasket(int id)
+        public async Task<ActionResult<string>> DeleteBasket(int id)
         {
-            var deleted = _dbContext.DeleteBasket(id);
-
-            if (deleted == null || deleted == "0")
+            var result = await _basketService.DeleteBasket(id);
+            if (result == null )
             {
-                return NotFound("Basket not found."); //silme işlemi başarısız olursa bunu
+                return NotFound($"Basket ID = {id} not found");
             }
-            return Ok("Basket deleted succesfully."); //başarılı olurssa bunu döndürür
-                                         //istenilen id deki bir sepeti silmek için
+            return Ok("Basket deleted successfully");
         }
+
     }
 }
 

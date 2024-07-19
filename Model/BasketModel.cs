@@ -1,17 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ShoppingCartApi.Model;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PostrgreSqlApi.Model
 {
     [Table(name: "basket")]
-    public class BasketModel
+    public class BasketModel : BaseEntity
     {
-
-        [Key]
-        [Required]
-        [Column(name: "id")]
-        public int ID { get; set; }
-
 
         [Required]
         [Column(name: "customer_id")]

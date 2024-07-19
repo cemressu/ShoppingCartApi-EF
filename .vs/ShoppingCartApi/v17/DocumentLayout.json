@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|c:\\users\\imesp17\\source\\repos\\postrgresqlapi\\shoppingcartapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|c:\\users\\imesp17\\source\\repos\\postrgresqlapi\\shoppingcartapi\\repositories\\concrete\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|solutionrelative:repositories\\concrete\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\ShoppingCartApi.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ShoppingCartApi.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|c:\\users\\imesp17\\source\\repos\\postrgresqlapi\\shoppingcartapi\\service\\basketservice\\basketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|solutionrelative:service\\basketservice\\basketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|c:\\users\\imesp17\\source\\repos\\postrgresqlapi\\shoppingcartapi\\controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|solutionrelative:controllers\\basketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|c:\\users\\imesp17\\source\\repos\\postrgresqlapi\\shoppingcartapi\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|c:\\users\\imesp17\\source\\repos\\postrgresqlapi\\shoppingcartapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|solutionrelative:controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|c:\\users\\imesp17\\source\\repos\\postrgresqlapi\\shoppingcartapi\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|solutionrelative:dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|c:\\users\\imesp17\\source\\repos\\postrgresqlapi\\shoppingcartapi\\service\\basketservice\\ibasketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|solutionrelative:service\\basketservice\\ibasketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{50AFE679-472D-4E27-9FC9-AE2F8D61CDB7}|ShoppingCartApi.csproj|c:\\users\\imesp17\\source\\repos\\postrgresqlapi\\shoppingcartapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 337,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -44,23 +44,37 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-05T07:50:33.754Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DbContext.cs",
-              "DocumentMoniker": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\DbContext.cs",
-              "RelativeDocumentMoniker": "DbContext.cs",
-              "ToolTip": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\DbContext.cs",
-              "RelativeToolTip": "DbContext.cs",
-              "ViewState": "AQIAALoCAAAAAAAAAAAcwMECAAAVAAAA",
+              "DocumentIndex": 0,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Repositories\\Concrete\\Repository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Concrete\\Repository.cs",
+              "ToolTip": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Repositories\\Concrete\\Repository.cs",
+              "RelativeToolTip": "Repositories\\Concrete\\Repository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T12:18:57.287Z",
-              "IsPinned": true
+              "WhenOpened": "2024-07-18T15:18:59.21Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShoppingCartApi.csproj.user",
+              "DocumentMoniker": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\ShoppingCartApi.csproj.user",
+              "RelativeDocumentMoniker": "ShoppingCartApi.csproj.user",
+              "ToolTip": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\ShoppingCartApi.csproj.user",
+              "RelativeToolTip": "ShoppingCartApi.csproj.user",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2024-07-19T08:03:52.781Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -68,52 +82,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Controllers\\ProductController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "IBasketService.cs",
+              "DocumentMoniker": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Service\\BasketService\\IBasketService.cs",
+              "RelativeDocumentMoniker": "Service\\BasketService\\IBasketService.cs",
+              "ToolTip": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Service\\BasketService\\IBasketService.cs",
+              "RelativeToolTip": "Service\\BasketService\\IBasketService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T13:15:27.371Z",
+              "WhenOpened": "2024-07-18T15:18:39.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BasketService.cs",
+              "DocumentMoniker": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Service\\BasketService\\BasketService.cs",
+              "RelativeDocumentMoniker": "Service\\BasketService\\BasketService.cs",
+              "ToolTip": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Service\\BasketService\\BasketService.cs",
+              "RelativeToolTip": "Service\\BasketService\\BasketService.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCEAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T15:11:24.367Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "OrdersController.cs",
-              "DocumentMoniker": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Controllers\\OrdersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
-              "ToolTip": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Controllers\\OrdersController.cs",
-              "RelativeToolTip": "Controllers\\OrdersController.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAIwEEAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T13:15:18.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "Controllers\\CustomerController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAA9wEMAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T13:15:18.11Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "BasketController.cs",
               "DocumentMoniker": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Controllers\\BasketController.cs",
               "RelativeDocumentMoniker": "Controllers\\BasketController.cs",
               "ToolTip": "C:\\Users\\imesp17\\source\\repos\\PostrgreSqlApi\\ShoppingCartApi\\Controllers\\BasketController.cs",
               "RelativeToolTip": "Controllers\\BasketController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwCEAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T13:14:10.844Z"
+              "WhenOpened": "2024-07-18T14:18:37.278Z"
             }
           ]
         }

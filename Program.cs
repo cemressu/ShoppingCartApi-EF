@@ -1,4 +1,12 @@
-﻿using ShoppingCartApi;
+﻿using Microsoft.EntityFrameworkCore;
+using PostrgreSqlApi.Model;
+using ShoppingCartApi;
+using ShoppingCartApi.Repositories.Abstract;
+using ShoppingCartApi.Repositories.Concrete;
+using ShoppingCartApi.Service.BasketService;
+using ShoppingCartApi.Service.CustomerService;
+using ShoppingCartApi.Service.OrderService;
+using ShoppingCartApi.Service.ProductService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,9 +16,20 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<DbContext>(new DbContext("Server=localhost; Database=urun; Port=5432; User Id=postgres; Password=cemre1381;"));
+
+
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnectionString");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
 //en son yazdığım servis en önemlisi dependency injectionumun calismasini engelleyen tamamen bu cumleymis 
 //burada DbContext icine veritabanı baglantımı koyuyorum ve bunları servis haline getiriyorum
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IBasketService,BasketService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
+
 
 var app = builder.Build();
 

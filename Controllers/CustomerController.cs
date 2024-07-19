@@ -1,94 +1,75 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PostrgreSqlApi.Model;
-
+using ShoppingCartApi.Model;
+using ShoppingCartApi.Service.CustomerService;
 
 namespace ShoppingCartApi.Controllers
 {
-   
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
     public class CustomerController : ControllerBase
     {
-        private readonly DbContext _dbContext; 
+        private readonly ICustomerService _customerService;
 
-        public CustomerController(DbContext dbContext) 
+        public CustomerController(ICustomerService customerService)
         {
-            _dbContext = dbContext;    
+            _customerService = customerService;
         }
-        // DEPENDENCY INJECTION orneği
 
 
 
-        
-        [HttpGet ("GetAllCustomers")]
-        public  IActionResult GetAllCustomers()
+        [HttpGet("GetAllCustomers")]
+        public async Task<IEnumerable<CustomerModel>> GetAllBaskets()
         {
-            var customers = _dbContext.GetAllCustomers(); //tüm http metodlarında da _connection yazıyordu 
+            IEnumerable<CustomerModel> customers = await _customerService.GetAllCustomer();
 
-            return Ok(customers);
+            return customers;
         }
-        // GET api tüm müşteri kayıtlarını alır 
 
 
-
-        
         [HttpGet("{id}/GetCustomerById")]
-        public IActionResult GetCustomerById(int id)
+        public async Task<ActionResult<CustomerModel>> GetCustomerById(int id)
         {
-            var customer = _dbContext.GetCustomerById(id);
-
-            if (customer==null)
+            var customer = await _customerService.GetCustomerById(id);
+            if (customer == null)
             {
-                return NotFound("Customer not found.");
+                return NotFound($"Customer ID = {id} not found");
             }
             return Ok(customer);
         }
-        //belirtilen id'ye sahip müşteri kaydını verir
 
 
-
-       
         [HttpPost("AddCustomer")]
-        public IActionResult AddCustomer([FromBody] CustomerModel customer)
+        public async Task<ActionResult<BasketModel>> AddCustomer([FromBody] CustomerModel customerModel)
         {
-            _dbContext.AddCustomer(customer);
-
-            return Ok("Customer added successfully.");
+            await _customerService.AddCustomer(customerModel);
+            return Ok("Customer added successfully");
         }
-        // POST api yeni müşteri ekler ve işlem başarılıysa "customer added successfully" mesajını ekrana yazar
 
 
-
-       
         [HttpPut("{id}/UpdateCustomer")]
-        public IActionResult UpdateCustomer(int id, [FromBody] CustomerModel customer)
+        public async Task<ActionResult<string>> UpdateCustomer(int id, [FromBody] CustomerModel customerModel)
         {
-            var updated = _dbContext.UpdateCustomer(id, customer);
-
-            if (updated == null || updated == "0")
+            var result = await _customerService.UpdateCustomer(id, customerModel);
+            if (result == "Customer not found")
             {
-                return NotFound("Customer not found."); //güncelleme basarisiz olursa bunu
+                return NotFound($"Customer ID = {id} not found");
             }
-            return Ok("Customer updated succesfully."); //basarili olursa bunu döndürür
-                                         //istenilen id deki bir sepeti güncellemek için
+            return Ok("Customer updated successfully");
         }
-        // PUT api istenilen müşterinin id sini alır ve o id deki müşteri bilgilerini günceller
 
 
 
-       
         [HttpDelete("{id}/DeleteCustomer")]
-        public IActionResult DeleteCustomer(int id)
+        public async Task<ActionResult<string>> DeleteCustomer(int id)
         {
-            var deleted = _dbContext.DeleteCustomer(id);
-
-            if (deleted==null || deleted == "0")
+            var result = await _customerService.DeleteCustomer(id);
+            if (result == null)
             {
-                return NotFound("Customer not found.");
+                return NotFound($"Customer ID = {id} not found");
             }
-            return Ok("Customer deleted successfully.");
+            return Ok("Customer deleted successfully");
         }
-        // DELETE api belirtilen id deki müşteriyi siler 
+
     }
 }
-
